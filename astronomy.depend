@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1652456633 source:c:\users\thalukanyo\workspace\c++_projects\astronomy\main.cpp
+	<iostream>
+	<vector>
+	<fstream>
+	<stdlib.h>
+	<algorithm>
+	<cmath>
+
