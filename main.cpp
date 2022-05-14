@@ -45,31 +45,27 @@ double median(vector<double> value_list) {
 //Find and return the Minimum value that was found in a vector
 double minimum(const vector<double> &value_list) {
     //TODO Find and return the minimum value that was found in a vector of values
-    double min = value_list[0];
+    double min_val = value_list[0];
     for (int i = 1; i < value_list.size(); i++) {
-        if (value_list[i] < min) {
-            min = value_list[i];
-        }
+        min_val = min(min_val,value_list[i]);
     }
-    return min;
+    return min_val;
 }
 
 //Find and return the Maximum value that was found in a vector
 double maximum(const vector<double> &value_list) {
     //TODO Find and return the maximum value that was found in a vector of values
-    double max = value_list[0];
+    double max_val = value_list[0];
     for (int i = 1; i < value_list.size(); i++) {
-        if (value_list[i] > max) {
-            max = value_list[i];
-        }
+        max_val = max(max_val,value_list[i]);
     }
-    return max;
+    return max_val;
 }
 
 vector<int> histogram(vector<double> value_list,double min_bound,double max_bound,int n_buckets) {
     //TODO Generate and return the histogram of the provided values between the min_bound and max_bound
     vector<int> histogram_list(n_buckets,0);
-    double range = (max_bound - min_bound);
+    double range = max_bound - min_bound;
     for (int i = 0; i < n_buckets; i++) {
         int bucket_id = round((value_list[i]-min_bound)/range*(n_buckets-1));
         histogram_list[bucket_id]++;
